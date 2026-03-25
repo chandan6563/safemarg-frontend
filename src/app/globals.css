@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes flyCurve {
+
+  /* Phase 1: Preparation (Nose Rotation) */
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate(0, 0) rotate(-60deg) scale(1);
+    opacity: 0.8;
+  }
+
+  /* Phase 2: Takeoff & Glide Curve */
+  20% {
+    transform: translate(-50px, -20px) rotate(-55deg) scale(1.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-1000px, -500px) rotate(-45deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes flyLeftToRight {
+  0% {
+    transform: translateX(-10vw) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateX(45vw) translateY(-20px) rotate(5deg);
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateX(110vw) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.animate-flight-premium {
+  animation: flyCurve 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-flight-horizontal {
+  animation: flyLeftToRight 20s linear infinite;
+}
+
+/* --- Compact Modern Calendar --- */
+.react-datepicker {
+  font-family: inherit;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  font-size: 0.8rem !important;
+}
+
+.react-datepicker__header {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  padding: 0.5rem 0 !important;
+}
+
+.react-datepicker__current-month {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  font-size: 0.8rem !important;
+}
+
+.react-datepicker__day-name {
+  width: 1.8rem !important;
+  line-height: 1.8rem !important;
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day {
+  width: 1.8rem !important;
+  line-height: 1.8rem !important;
+  border-radius: 0.5rem !important;
+  margin: 0.1rem !important;
+  transition: all 0.2s !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #1e40af !important;
+  color: white !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: transparent !important;
+  color: inherit !important;
+  border: 1px solid #2563eb !important;
+}
+
+.react-datepicker__navigation {
+  top: 0.5rem !important;
+}
